@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage[boxruled,vlined,linesnumbered]{algorithm2e}
 
 \begin{document}
 Answers to Cracking the Coding Interview in \LaTeX
@@ -31,6 +33,27 @@ Big O Additional Problems:
 1.11 Checking if is in order takes O(s) in size of string s, otherwise makes successive calls to every possible string with $c^s$ possibilities, so O($s*c^s$)
 
 1.12 Total is O($b$log$b$) for mergesort + $a$log$b$ for binary searching b for each int in a. So, O(($a+b$)log$b$).
+
+\pagebreak
+
+Chapter 1: Arrays \& Strings
+Interview Questions
+
+\linebreak
+
+1.1 
+\begin{algorithm}
+ \For{char c in string}{
+  	arr = zeros(26)\;
+  	\If{arr[int(c)] == 0}{
+   		arr[int(c)] += 1\;}
+   	\Else{
+   		Return False
+  		}
+  	Return True
+ 	}
+ \caption{IsUnique}
+\end{algorithm}
 
 
 \end{document}
