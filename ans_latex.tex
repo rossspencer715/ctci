@@ -45,8 +45,9 @@ Interview Questions
 
 1.1 
 \begin{algorithm}
+arr = zeros(26)\;
  \For{char c in string}{
-  	arr = zeros(26)\;
+  	
   	\If{arr[int(c)] == 0}{
    		arr[int(c)] += 1\;}
    	\Else{
@@ -55,6 +56,33 @@ Interview Questions
   	Return True
  	}
  \caption{IsUnique}
+
+\end{algorithm}
+
+1.2
+\begin{algorithm}
+\If{len(string1) != len(string2)}{
+	Return False\;
+}
+arr = zeros(26)\;
+ \For{char c in string1}{
+  	
+   	arr[int(c)] += 1\;
+ }
+
+ \For{char c in string2}{
+  	
+   	arr[int(c)] -= 1\;
+ }
+
+ \For{int i = 0\; i < 26\; ++i}{
+ \If {arr[i] != 0}{
+ Return False\;
+ }
+
+ Return True\;
+ }
+ \caption{IsPermutation}
 
 \end{algorithm}
 
