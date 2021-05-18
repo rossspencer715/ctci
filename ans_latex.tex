@@ -86,5 +86,86 @@ arr = zeros(26)\;
 
 \end{algorithm}
 
+\pagebreak
+1.3
+\begin{algorithm}
+arr = \lq\rq
+
+ \For{char c in string1}{
+  	
+   	\If{c == ’ ’}{
+   		arr += ’\%20’
+   	}
+   	\Else{
+   		arr += c
+   	}
+
+ }
+
+ Return arr\;
+ 
+ \caption{URLify}
+
+\end{algorithm}
+
+
+
+1.4
+Thought process: a palindrome has a multiple of 2 of all but at most one character (e.g., ...abcdcba..., so d could appear an odd number of times as long as the rest appear an even number of times). Iterate through string and count all chars, then set a boolean flag variable that results in False when multiple characters appear an odd number of times.
+\begin{algorithm}
+dict count = {}
+ \For{char c in string1}{
+   		count(c) += 1
+   	}
+
+ boolean oddAlreadyPresent = False
+ \For{char c in count}{
+   		\If{count(c) mod 2 == 1}{
+   			\If{oddAlreadyPresent == False}{
+   				oddAlreadyPresent = True
+   			}
+   			\Else{
+   				Return False
+   			}
+   		}
+   	}
+
+ Return True
+ 
+ \caption{Palindrome Permutation}
+
+\end{algorithm}
+
+\pagebreak
+1.5
+\begin{algorithm}
+\If{string1 == string2}{
+	Return True
+}
+\If{abs(len(string1)-len(string2))$>$1}{
+	Return False
+}
+
+diffsFromMissing = 0
+
+dict count = {}
+\For{c in string1}{
+	count[c] += 1
+}
+
+\For{c in string2}{
+	//Catch error if not in count by adding 1 to diffsFromMissing
+	count[c] -= 1
+}
+
+\If{diffsFromMissing $>$ 1}{Return False}
+
+\If{sum(counts) $>$ 1}{Return False}
+
+Return True 
+ 
+ \caption{One Away}
+
+\end{algorithm}
 
 \end{document}
