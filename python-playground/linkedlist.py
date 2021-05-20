@@ -16,14 +16,14 @@ class singlylinkedlist:
 			ptr = ptr.next
 		return leng
 
-	def display(self):
+	def __repr__(self):
 		ptr = self.head
 		lst_to_str = ''
 		while ptr:
 			lst_to_str += str(ptr.data) + ' '
 
 			ptr = ptr.next
-		print(lst_to_str)
+		return lst_to_str
 
 	def push_back(self, data):
 		newNode = node(data)
@@ -65,11 +65,11 @@ lst.push_back(5)
 lst.push_back(7)
 
 print(len(lst))
-lst.display()
+print(lst)
 
 lst.insert(3,1)
-lst.display()
+print(lst)
 
 
 lst.insert(4,4)
-lst.display()
+print(lst)
