@@ -33,6 +33,19 @@ class LivingThingFactory:
         if tp == "Person":
             return Person(nm, age)
 
+class PersonBuilder:
+    def __init__(self):
+        self.__name = None
+        self.__age = None
+    def set_name(self, name):
+        self.__name = name
+        return self
+    def set_age(self, age):
+        self.__age = age
+        return self
+    def build(self):
+        return Person(self.__name, self.__age)
+
 p = Person("Ross", 24)
 print(p.Name)
 p.Name = "Efa"
@@ -41,3 +54,5 @@ p.SayHi()
 ltf = LivingThingFactory()
 p2 = ltf.make()
 print(p2)
+p3 = PersonBuilder().set_name("Paul").build()
+print(p3)
