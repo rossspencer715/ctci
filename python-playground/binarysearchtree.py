@@ -1,5 +1,5 @@
 #hi
-
+import random 
 class node:
     def __init__(self, data):
         self.data = data
@@ -11,7 +11,7 @@ class bst:
         self.root = None
 
     def insert(self, root, data):
-        if root is None:
+        if not root:
             root = node(data)
             return root
         else:
@@ -31,11 +31,13 @@ class bst:
         if root.right:
             self.inorder_traversal(root.right)
         return
-
+                            
 
 if __name__ == '__main__':
     tree = bst()
     root = None
     for i in range(10):
-        root = tree.insert(root, i)
+        val = random.randint(0,1000)
+        root = tree.insert(root, val)
+        print(f"Inserted {val}")
     tree.inorder_traversal(root)
